@@ -12,8 +12,9 @@
     font-family: var(--font-family);
     font-weight: normal;
 }
-body {
-    width: 100%;
+html, body {
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 
@@ -27,10 +28,11 @@ header {
     font-family: var(--font-family);
     color: var(--text-color);/*  */
     align-items: center;
+    justify-content: space-around;
 }
 header > button {
-    position:absolute;
-    right: 100px;
+    /*position:absolute;
+    right: 100px;*/
     height: 50px;
     width: 120px;
     border-radius: 25px;
@@ -47,15 +49,15 @@ header > button {
     gap: 16px;  
     width: 150px;
     height: 50px;
-    position: absolute;
-    left: 200px;
+    /*position: absolute;
+    left: 200px;*/
 }
 header > nav {
     display: flex;
     gap: 50px;
-    margin-left: 100px;
+    /*margin-left: 100px;
     position: absolute;
-    left: 400px;
+    left: 400px;*/
 }
 
 /* ---------------------------------- */
@@ -82,7 +84,7 @@ header > nav {
 }
 
 #text > h1 {
-    font-size: 68pt;
+    font-size: clamp(2rem, 9vw, 5rem);
     margin-bottom: 20px;
     margin-top: 30px;
     letter-spacing: -3px;
@@ -177,10 +179,12 @@ header > nav {
 #partners > div {
     display: flex;
     width: 100%;
-    position: relative;
+    height: auto;
     gap: 10px;
     margin-top: 80px;
     width: auto;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 #partners > div > div {
     width: 600px;
@@ -193,7 +197,14 @@ header > nav {
     color: var(--text-color);
     font-weight: bold;
     border-radius: 10px;
+    flex-shrink: 0;
 }
+#partners > div {
+        
+    }
+    #partners > div > div {
+        
+    }
 /* --------------------------------- */
 
 /* ----------------two---------------*/
@@ -870,10 +881,27 @@ footer > p{
 
 @media screen and (max-width: 1280px) {
 
+    header {
+        flex-direction: column;
+        height: 300px;
+        align-items: center;
 
+        gap: 25px;
+    }
+    header > nav {
+        display: none;
+    }
+    #one > #text {
+        width: 90%;
+    }
+    #flow {
+        margin-top: 50px;
+    }
     #obrazki {
         display: none;
     }
+    
+    
     #two {
         flex-direction: column;
         height: auto;
@@ -897,9 +925,135 @@ footer > p{
         width: 100%;
         text-align: center;
         align-items: center;
+        gap:50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        justify-content: center;
     }
-    #threee > div {
+    #three {
+        height: auto;
+    }
+    #three > div {
+        height: auto;
+    }
+
+    #four {
+        height: auto;
+    }
+    #four > div {
+        width: 95%;
+    }
+
+    #five {
+        height: auto;
+    }
+    #five > div {
+        grid-template-columns: auto;
+        margin-bottom: 50px;
+    }
+
+    #six > h1 {
+        text-align: center;
+    }
+    #six {
+        padding: 30px;
+    }
+    #slider {
+        width: 100vw;
+        position: absolute;
+        left: 0;
+    }
+
+    #seven {
+        padding: 0;
+    }
+    #seven > h1 {
+        font-size: clamp(2rem, 9vw, 5rem);
+    }
+
+    #eight {
+        height: auto;
+    }
+    #halfhalf {
+        flex-direction: column;
+    }
+    #faq2 > div > p {
+        display: none;
+    }
+    #answers > h1 {
+        font-size: clamp(2rem, 9vw, 5rem);
+    }
+    #answers > button {
+        position: inherit;
+        margin-top: 50px;
+    }
+
+    #nine {
+        flex-direction: column;
+        height: auto;
+    }
+    #nine > div {
+        width: 100%;
+    }
+    #learn {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    #learn > button {
+        position: inherit;
+        margin: auto;
         
     }
+    #articles > div {
+        flex-direction: column;
+    }
+    #articles {
+        margin-bottom: 100px;
+    }
+
+    #ten {
+        height: auto;
+    }
+    #faq > div {
+        height: auto;
+    }
+    #faq {
+        margin-bottom: 100px;
+    }
+
+    #eleven {
+        justify-content: center;
+    }
+    #eleven > div:nth-of-type(2) {
+        display: none;
+    }
+    #eleven > div:nth-of-type(1) {
+        text-align: center;
+    }
+    #eleven > div:nth-of-type(1) > button {
+        margin-top: 25px;
+    }
+
+
+
+    footer > div {
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    footer > div > div > a {
+        display: none;
+    }
+    #company > a:nth-of-type(3) {
+        display: none;
+    }
+    #follow > a {
+        display: flex;
+    }
+    footer > p{
+    text-align: right;
+    margin-top: 50px;
+}
 
 }
